@@ -9,7 +9,7 @@ function App() {
         <h2>Github Profile Class Component</h2>
       </header>
       <main>
-        <Dashboard />
+        <
       </main>
     </div>
   );

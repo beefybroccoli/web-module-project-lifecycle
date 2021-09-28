@@ -6,11 +6,8 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h2>Github Profile Class Component</h2>
+        <h2>Github Profile Class </h2>
       </header>
-      <main>
-        <Dashboard />
-      </main>
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default class UserCard extends React.Component {
   render() {
     return (
       <Container>
-        <h3>userCard.js</h3>
+        <h3>UserCard.js</h3>
       </Container>
     );
   }
