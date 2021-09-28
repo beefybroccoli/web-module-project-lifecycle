@@ -6,7 +6,7 @@ const Container = styled.div`
   margin: 10px;
   padding: 10px;
 `;
-export default class UserCard extends React.Component {
+export default class Dashboard extends React.Component {
   render() {
     return (
       <Container>
