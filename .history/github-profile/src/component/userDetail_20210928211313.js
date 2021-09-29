@@ -1,11 +1,26 @@
-import axios from "axios";
+import React from "react";
+import styled from "styled-components";
 
-export const API_URL = "https://api.github.com/users/";
-export const My_Username = "beefybroccoli";
-
-export const API_Call = (input_username) => {
-  return axios.get(API_URL + input_username);
-};
+const Container = styled.div`
+  border: 1px black solid;
+  margin: 10px;
+  padding: 10px;
+`;
+export default class UserDetail extends React.Component {
+  render() {
+    if (this.props.input_object) {
+      console.log("this.props.input_object = ", this.props.input_object);
+    }
+    return (
+      <Container>
+        <h3>userDetail.js</h3>
+        <p>
+          {this.props.input_object && JSON.stringify(this.props.input_object)}
+        </p>
+      </Container>
+    );
+  }
+}
 
 /*
 avatar_url: "https://avatars.githubusercontent.com/u/16412641?v=4"

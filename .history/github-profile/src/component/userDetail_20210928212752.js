@@ -6,11 +6,6 @@ const Container = styled.div`
   margin: 10px;
   padding: 10px;
 `;
-
-const Img = styled.img`
-  width: 20px;
-  height: 20px;
-`;
 export default class UserDetail extends React.Component {
   render() {
     if (this.props.input_object) {
@@ -32,7 +27,7 @@ export default class UserDetail extends React.Component {
       <Container>
         <h3>userDetail.js</h3>
 
-        {avatar_url ? <Img src={avatar_url} alt="user logo" /> : null}
+        {avatar_url ? <img src={avatar_url} alt="user logo" /> : null}
         {bio ? <p>bio: {bio}</p> : null}
         {blog ? <p>{blog}</p> : null}
         {company ? <p>company: {company}</p> : null}

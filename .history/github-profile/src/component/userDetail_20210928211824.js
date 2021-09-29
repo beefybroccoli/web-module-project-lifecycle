@@ -6,41 +6,18 @@ const Container = styled.div`
   margin: 10px;
   padding: 10px;
 `;
-
-const Img = styled.img`
-  width: 20px;
-  height: 20px;
-`;
 export default class UserDetail extends React.Component {
   render() {
     if (this.props.input_object) {
       console.log("this.props.input_object = ", this.props.input_object);
     }
-    const {
-      avatar_url,
-      bio,
-      blog,
-      company,
-      email,
-      html_url,
-      login,
-      name,
-      repos_url,
-      url,
-    } = this.props.input_object;
+    const { } = this.props.input_object;
     return (
       <Container>
         <h3>userDetail.js</h3>
-
-        {avatar_url ? <Img src={avatar_url} alt="user logo" /> : null}
-        {bio ? <p>bio: {bio}</p> : null}
-        {blog ? <p>{blog}</p> : null}
-        {company ? <p>company: {company}</p> : null}
-        {email ? <p>email: {email}</p> : null}
-        {html_url ? <p>{html_url}</p> : null}
-        {login ? <p>username: {login}</p> : null}
-        {name ? <p>name: {name}</p> : null}
-        {repos_url ? <p>repo url: {repos_url}</p> : null}
+        <p>
+          {this.props.input_object && JSON.stringify(this.props.input_object)}
+        </p>
       </Container>
     );
   }
@@ -51,13 +28,17 @@ avatar_url: "https://avatars.githubusercontent.com/u/16412641?v=4"
 bio: null
 blog: ""
 company: null
+created_at: "2015-12-23T10:05:59Z"
 email: null
 followers_url: "https://api.github.com/users/beefybroccoli/followers"
 html_url: "https://github.com/beefybroccoli"
 login: "beefybroccoli"
 name: "TedKim"
+node_id: "MDQ6VXNlcjE2NDEyNjQx"
 repos_url: "https://api.github.com/users/beefybroccoli/repos"
+updated_at: "2021-08-11T15:10:19Z"
 url: "https://api.github.com/users/beefybroccoli"
+
 avatar_url,
 bio,
 blog,
@@ -68,7 +49,7 @@ followers_url,
 html_url,
 login,
 name,
-repos_url,
-url,
+repos_url: "https://api.github.com/users/beefybroccoli/repos"
+url: "https://api.github.com/users/beefybroccoli"
 
 */
