@@ -74,18 +74,15 @@ class Form extends React.Component {
   render() {
     return (
       <form onSubmit={this.cb_onSubmit}>
-        <label>
-          {" Search User : "}
-          <input
-            autoFocus
-            type="text"
-            name="input"
-            id="input"
-            value={this.state.input}
-            onChange={this.cb_onChange}
-            cb_getInput={this.cb_getInput}
-          />
-        </label>
+        <input
+          autoFocus
+          type="text"
+          name="input"
+          id="input"
+          value={this.state.input}
+          onChange={this.cb_onChange}
+          cb_getInput={this.cb_getInput}
+        />
       </form>
     );
   }

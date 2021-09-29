@@ -64,7 +64,7 @@ export default class Dashboard extends React.Component {
 class Form extends React.Component {
   state = { input: "" };
   cb_onChange = (event) => {
-    this.setState({ input: event.target.value });
+    `this.setState({ input: event.target.value });
   };
   cb_onSubmit = (event) => {
     event.preventDefault();

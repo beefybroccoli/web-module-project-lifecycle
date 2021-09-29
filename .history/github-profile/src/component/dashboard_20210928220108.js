@@ -75,7 +75,7 @@ class Form extends React.Component {
     return (
       <form onSubmit={this.cb_onSubmit}>
         <label>
-          {" Search User : "}
+          Search User : 
           <input
             autoFocus
             type="text"
