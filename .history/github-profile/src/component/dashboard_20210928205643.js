@@ -10,27 +10,21 @@ const Container = styled.div`
   padding: 10px;
 `;
 export default class Dashboard extends React.Component {
-  constructor() {
-    super();
-    this.state = null;
-  }
 
+    constructor(){
+        super
+    }
+    state={null};
   //run once
   componentDidMount() {
     const promise = con.API_Call(con.My_Username);
     promise.then((res) => {
       console.log("dashboard.js - data = ", res.data);
-      this.setState(res.data);
     });
   }
 
   //run on every render
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState !== this.state) {
-      console.log("dashboard.js - diff prevState=", prevState);
-      console.log("dashboard.js - diff this.state = ", this.state);
-    }
-  }
+  componentDidUpdate() {}
 
   //run whenever an update of state occur
   componentDidUpdate(prevProps, prevState) {}
@@ -39,7 +33,6 @@ export default class Dashboard extends React.Component {
     return (
       <Container>
         <h3>dashboard.js</h3>
-        <p>{this.state ? JSON.stringify(this.state) : "waiting"}</p>
       </Container>
     );
   }

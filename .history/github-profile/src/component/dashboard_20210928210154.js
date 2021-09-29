@@ -39,7 +39,8 @@ export default class Dashboard extends React.Component {
     return (
       <Container>
         <h3>dashboard.js</h3>
-        <p>{this.state ? JSON.stringify(this.state) : "waiting"}</p>
+        {this.state ? }
+        <p>{JSON.stringify(this.state)}</p>
       </Container>
     );
   }

@@ -22,6 +22,8 @@ export default class Dashboard extends React.Component {
       console.log("dashboard.js - data = ", res.data);
       this.setState(res.data);
     });
+
+    console.log()
   }
 
   //run on every render
@@ -39,7 +41,6 @@ export default class Dashboard extends React.Component {
     return (
       <Container>
         <h3>dashboard.js</h3>
-        <p>{this.state ? JSON.stringify(this.state) : "waiting"}</p>
       </Container>
     );
   }

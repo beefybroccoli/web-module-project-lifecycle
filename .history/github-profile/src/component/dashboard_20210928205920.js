@@ -27,8 +27,8 @@ export default class Dashboard extends React.Component {
   //run on every render
   componentDidUpdate(prevProps, prevState) {
     if (prevState !== this.state) {
-      console.log("dashboard.js - diff prevState=", prevState);
-      console.log("dashboard.js - diff this.state = ", this.state);
+      console.log("prevState=", prevState);
+      console.log("this.state = ", this.state);
     }
   }
 
@@ -39,7 +39,6 @@ export default class Dashboard extends React.Component {
     return (
       <Container>
         <h3>dashboard.js</h3>
-        <p>{this.state ? JSON.stringify(this.state) : "waiting"}</p>
       </Container>
     );
   }
