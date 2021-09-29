@@ -30,7 +30,7 @@ export default class Dashboard extends React.Component {
         this.setState({ ...this.state, followers: res.data });
       })
       .catch((error) => {
-        console.log("promise followers - ", error);
+        console.log("promise1 - ", error);
       });
   };
 
@@ -45,7 +45,7 @@ export default class Dashboard extends React.Component {
 
   componentDidMount() {
     //initially retrieve NSA's github profile
-    this.cb_getUserDataFromAPI("beefybrocoli");
+    this.cb_getUserDataFromAPI("nsa");
   }
 
   //run whenever state changes

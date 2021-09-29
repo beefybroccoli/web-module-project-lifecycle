@@ -15,7 +15,6 @@ export default class Followers extends React.Component {
     return (
       <Container>
         <h3>followers.js</h3>
-        {!this.props.input_array_of_objects && <p>loading...</p>}
         {this.props.input_array_of_objects &&
           Array.from(this.props.input_array_of_objects).map(
             (eachObject, index) => {

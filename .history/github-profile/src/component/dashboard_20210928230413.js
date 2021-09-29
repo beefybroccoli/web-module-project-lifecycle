@@ -12,26 +12,17 @@ const Container = styled.div`
 export default class Dashboard extends React.Component {
   state = { userData: null, userInput: "", followers: [] };
 
-  cb_getUserDataFromAPI = (input_username) => {
+  cb_getUserDataFromAPI = (input_username = "") => {
     const promise = con.API_Call_Profile(input_username);
-    promise
-      .then((res) => {
-        // console.log("promise1 - dashboard.js - data = ", res.data);
-        this.setState({ ...this.state, userData: res.data });
-      })
-      .catch((error) => {
-        console.log("promise userProfile - ", error);
-      });
+    promise.then((res) => {
+      //   console.log("dashboard.js - data = ", res.data);
+      this.setState({ ...this.state, userData: res.data });
+    });
 
     const promise2 = con.API_Call_Followers(input_username);
-    promise2
-      .then((res) => {
-        // console.log("promise2 - dashboard.js - data = ", res.data);
-        this.setState({ ...this.state, followers: res.data });
-      })
-      .catch((error) => {
-        console.log("promise followers - ", error);
-      });
+    promise2.then((res) => {
+      this.setState({ ...this.state, followers: res.data });
+    });
   };
 
   cb_getInput = (input_text) => {
@@ -44,8 +35,7 @@ export default class Dashboard extends React.Component {
    */
 
   componentDidMount() {
-    //initially retrieve NSA's github profile
-    this.cb_getUserDataFromAPI("beefybrocoli");
+    this.cb_getUserDataFromAPI("gayanvoice");
   }
 
   //run whenever state changes
@@ -56,8 +46,8 @@ export default class Dashboard extends React.Component {
    */
   componentDidUpdate(prevProps, prevState) {
     if (prevState !== this.state) {
-      //   console.log("dashboard.js - diff prevState=", prevState);
-      //   console.log("dashboard.js - diff this.state = ", this.state);
+    //   console.log("dashboard.js - diff prevState=", prevState);
+      console.log("dashboard.js - diff this.state = ", this.state);
       if (this.state.userInput !== "") {
         this.cb_getUserDataFromAPI(this.state.userInput);
         this.setState({ ...this.state, userInput: "" });

@@ -45,7 +45,8 @@ export default class Dashboard extends React.Component {
 
   componentDidMount() {
     //initially retrieve NSA's github profile
-    this.cb_getUserDataFromAPI("beefybrocoli");
+    this.cb_getUserDataFromAPI("beefybrocoli
+    ");
   }
 
   //run whenever state changes

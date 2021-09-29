@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import * as con from "./constant";
 
 const Container = styled.div`
   border: 1px black solid;
@@ -11,11 +12,6 @@ const Img = styled.img`
   height: 20px;
 `;
 export default class UserCard extends React.Component {
-  cb_onClick = (event) => {
-    event.stopPropagation();
-    // console.log("userDetail.js - run cb_onClick");
-    // this.props.cb_getInput(JSON.stringify(this.props.input_object.login));
-  };
   render() {
     const { avatar_url, bio, company, html_url, login, name } =
       this.props.input_object;

@@ -16,21 +16,21 @@ export default class Dashboard extends React.Component {
     const promise = con.API_Call_Profile(input_username);
     promise
       .then((res) => {
-        // console.log("promise1 - dashboard.js - data = ", res.data);
+        console.log("promise1 - dashboard.js - data = ", res.data);
         this.setState({ ...this.state, userData: res.data });
       })
       .catch((error) => {
-        console.log("promise userProfile - ", error);
+        console.log("promise1 - ", error);
       });
 
     const promise2 = con.API_Call_Followers(input_username);
     promise2
       .then((res) => {
-        // console.log("promise2 - dashboard.js - data = ", res.data);
+        console.log("promise2 - dashboard.js - data = ", res.data);
         this.setState({ ...this.state, followers: res.data });
       })
       .catch((error) => {
-        console.log("promise followers - ", error);
+        console.log("promise1 - ", error);
       });
   };
 
@@ -44,8 +44,7 @@ export default class Dashboard extends React.Component {
    */
 
   componentDidMount() {
-    //initially retrieve NSA's github profile
-    this.cb_getUserDataFromAPI("beefybrocoli");
+    this.cb_getUserDataFromAPI("react");
   }
 
   //run whenever state changes

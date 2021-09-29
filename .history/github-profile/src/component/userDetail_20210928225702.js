@@ -14,7 +14,7 @@ const Img = styled.img`
 export default class UserDetail extends React.Component {
   render() {
     if (this.props.input_object) {
-      //   console.log("this.props.input_object = ", this.props.input_object);
+      console.log("this.props.input_object = ", this.props.input_object);
     }
     const {
       avatar_url,
@@ -28,9 +28,8 @@ export default class UserDetail extends React.Component {
       repos_url,
       url,
     } = this.props.input_object;
-
     return (
-      <Container>
+      <Container onClick={cb_onClick}>
         <h3>userDetail.js</h3>
 
         {avatar_url ? <Img src={avatar_url} alt="user logo" /> : null}

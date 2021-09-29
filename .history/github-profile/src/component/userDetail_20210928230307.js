@@ -12,9 +12,14 @@ const Img = styled.img`
   height: 20px;
 `;
 export default class UserDetail extends React.Component {
+  cb_onClick = (event) => {
+    event.stopPropagation();
+    console.log("userDetail.js - run cb_onClick");
+    this.props.cb_getInput(this.props.input_object.login);
+  };
   render() {
     if (this.props.input_object) {
-      //   console.log("this.props.input_object = ", this.props.input_object);
+      console.log("this.props.input_object = ", this.props.input_object);
     }
     const {
       avatar_url,
@@ -30,7 +35,7 @@ export default class UserDetail extends React.Component {
     } = this.props.input_object;
 
     return (
-      <Container>
+      <Container onClick={this.cb_onClick}>
         <h3>userDetail.js</h3>
 
         {avatar_url ? <Img src={avatar_url} alt="user logo" /> : null}

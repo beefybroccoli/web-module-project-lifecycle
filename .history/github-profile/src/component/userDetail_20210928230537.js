@@ -12,6 +12,7 @@ const Img = styled.img`
   height: 20px;
 `;
 export default class UserDetail extends React.Component {
+  
   render() {
     if (this.props.input_object) {
       //   console.log("this.props.input_object = ", this.props.input_object);
@@ -30,7 +31,7 @@ export default class UserDetail extends React.Component {
     } = this.props.input_object;
 
     return (
-      <Container>
+      <Container >
         <h3>userDetail.js</h3>
 
         {avatar_url ? <Img src={avatar_url} alt="user logo" /> : null}

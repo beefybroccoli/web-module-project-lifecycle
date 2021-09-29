@@ -10,7 +10,7 @@ export const API_Call_Profile = (input_username = "beefybroccoli") => {
   return axios.get(API_URL + input_username);
 };
 
-export const API_Call_Followers = (input_username = "beefybroccoli") => {
+export const API_Call_Followers = (input_username) => {
   return axios.get(
     API_URL_Followers_front + input_username + API_URL_Followers_end
   );

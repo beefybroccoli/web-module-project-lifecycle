@@ -1,26 +1,28 @@
 import React from "react";
 import styled from "styled-components";
+import * as con from "./constant";
 
 const Container = styled.div`
   border: 1px black solid;
   margin: 10px;
   padding: 10px;
 `;
-const Img = styled.img`
-  width: 20px;
-  height: 20px;
-`;
 export default class UserCard extends React.Component {
-  cb_onClick = (event) => {
-    event.stopPropagation();
-    // console.log("userDetail.js - run cb_onClick");
-    // this.props.cb_getInput(JSON.stringify(this.props.input_object.login));
-  };
   render() {
-    const { avatar_url, bio, company, html_url, login, name } =
-      this.props.input_object;
+    const {
+      avatar_url,
+      bio,
+      blog,
+      company,
+      email,
+      html_url,
+      login,
+      name,
+      repos_url,
+      url,
+    } = this.props.input_object;
     return (
-      <Container onClick={this.cb_onClick}>
+      <Container>
         <h3>userCard.js</h3>
 
         {avatar_url ? <Img src={avatar_url} alt="user logo" /> : null}
