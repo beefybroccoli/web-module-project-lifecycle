@@ -10,18 +10,15 @@ const Container = styled.div`
   padding: 10px;
 `;
 export default class Dashboard extends React.Component {
-  state = { userData: null, userInput: "", followers: [] };
+  state = { userData: null, userInput: "", arr };
 
   cb_getUserDataFromAPI = (input_username = "") => {
-    const promise = con.API_Call_Profile(input_username);
+    const promise = con.API_Call(
+      input_username === "" ? con.My_Username : input_username
+    );
     promise.then((res) => {
       //   console.log("dashboard.js - data = ", res.data);
       this.setState({ ...this.state, userData: res.data });
-    });
-
-    const promise2 = con.API_Call_Followers(input_username);
-    promise2.then((res) => {
-      this.setState({ ...this.state, followers: res.data });
     });
   };
 
@@ -65,16 +62,10 @@ export default class Dashboard extends React.Component {
         {this.state.userInput === "" ? null : (
           <p> userInput : {this.state.userInput}</p>
         )}
-        {this.state.followers && (
-          <p>
-            {" "}
-            followers : {Array.from(this.state.followers).length} followers
-          </p>
-        )}
         {this.state.userData && (
           <UserDetail input_object={this.state.userData} />
         )}
-        <Followers input_arry={this.state.followers} />
+        <Followers input_arry={} />
       </Container>
     );
   }

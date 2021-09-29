@@ -1,20 +1,20 @@
 import axios from "axios";
+import { API_URL_Followe } from "../../../.history/github-profile/src/component/constant_20210928223017";
 
 export const API_URL = "https://api.github.com/users/";
 export const My_Username = "beefybroccoli";
 
-export const API_URL_Followers_front = "https://api.github.com/users/";
-export const API_URL_Followers_end = "/followers";
+export const API_URL_Followers_front = "https://api.github.com/users/"/followers"";
+export const API_URL_Followers_end = ;
 
 export const API_Call_Profile = (input_username) => {
   return axios.get(API_URL + input_username);
 };
 
 export const API_Call_Followers = (input_username) => {
-  return axios.get(
-    API_URL_Followers_front + input_username + API_URL_Followers_end
-  );
-};
+    return axios.get(API_URL + input_username);
+  };
+
 
 /*
 avatar_url: "https://avatars.githubusercontent.com/u/16412641?v=4"

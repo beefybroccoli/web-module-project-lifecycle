@@ -69,7 +69,7 @@ export default class Dashboard extends React.Component {
           <p>
             {" "}
             followers : {Array.from(this.state.followers).length} followers
-          </p>
+          `</p>
         )}
         {this.state.userData && (
           <UserDetail input_object={this.state.userData} />

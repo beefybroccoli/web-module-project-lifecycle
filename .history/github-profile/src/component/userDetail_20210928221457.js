@@ -34,8 +34,7 @@ export default class UserDetail extends React.Component {
 
         {avatar_url ? <Img src={avatar_url} alt="user logo" /> : null}
         <p>
-          {name ? `name: ${name}` : null}
-          {" / "} {login ? `username: ${login}` : null}
+          {name ? `name: ${name}` : null}{"/"} {login ? `username: ${login}` : null}
         </p>
         {bio ? <p>bio: {bio}</p> : null}
         {company ? <p>company: {company}</p> : null}
