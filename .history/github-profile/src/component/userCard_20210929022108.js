@@ -18,7 +18,9 @@ export default class UserCard extends React.Component {
       "userCard.js - this.props.input_object.login = ",
       this.props.input_object.login.trim()
     );
-    this.props.cb_getInput(this.props.input_object.login.trim());
+    this.props.cb_getInput(
+      this.props.input_object.login.trim())
+    );
   };
   render() {
     const { avatar_url, bio, company, html_url, login, name } =

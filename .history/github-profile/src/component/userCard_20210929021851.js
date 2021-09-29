@@ -16,9 +16,9 @@ export default class UserCard extends React.Component {
     // console.log("userDetail.js - run cb_onClick");
     console.log(
       "userCard.js - this.props.input_object.login = ",
-      this.props.input_object.login.trim()
+      String.(this.props.input_object.login)
     );
-    this.props.cb_getInput(this.props.input_object.login.trim());
+    this.props.cb_getInput(JSON.stringify(this.props.input_object.login));
   };
   render() {
     const { avatar_url, bio, company, html_url, login, name } =
